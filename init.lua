@@ -50,3 +50,5 @@ if O.lang.tsserver.active then
     require('lsp.angular-ls')
     require('lsp.vue-ls')
 end
+
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')

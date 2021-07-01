@@ -28,7 +28,7 @@ O.plugin.numb.active = false
 O.plugin.ts_playground.active = false
 O.plugin.indent_line.active = false
 O.plugin.gitlinker.active = false
-O.plugin.zen.active = false
+O.plugin.zen.active = true
 
 -- dashboard
 -- O.dashboard.custom_header = {""}
@@ -70,6 +70,14 @@ O.lang.lua.autoformat = false
 O.lang.tsserver.formatter = 'prettier'
 O.lang.tsserver.linter = nil
 O.lang.tsserver.autoformat = true
+
+-- php
+O.lang.php.active = true
+O.lang.php.autoformat = true
+
+-- tailwind
+O.lang.tailwindcss.active = true
+O.lang.tailwindcss.autoformat = true
 
 -- json
 O.lang.json.active = false

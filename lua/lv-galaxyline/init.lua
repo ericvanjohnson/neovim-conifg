@@ -107,6 +107,13 @@ print(vim.fn.getbufvar(0, 'ts'))
 vim.fn.getbufvar(0, 'ts')
 
 table.insert(gls.left, {
+    Start = {
+        provider = function() return ' ' end,
+        highlight = {colors.mode_bg,}
+    }
+})
+
+table.insert(gls.left, {
     GitIcon = {
         provider = function()
             return ' '
@@ -154,8 +161,27 @@ table.insert(gls.left, {
         highlight = {colors.red, colors.bg}
     }
 })
+table.insert(gls.left, {
+    FileName = {
+        provider = 'FileName',
+        condition = condition.hide_in_width,
+        icon = ' ⚛ ',
+        highlight = {colors.red, colors.bg}
+    }
+})
+table.insert(gls.left, {
+    Separa = {
+        provider = function() return ' ' end,
+        highlight = {colors.mode_bg, },
+      }
+})
 
 table.insert(gls.right, {
+    Start = {
+        provider = function() return ' ' end,
+        highlight = {colors.mode_bg,}
+    }
+})table.insert(gls.right, {
     DiagnosticError = {provider = 'DiagnosticError', icon = '  ', highlight = {colors.error_red, colors.bg}}
 })
 table.insert(gls.right, {DiagnosticWarn = {provider = 'DiagnosticWarn', icon = '  ', highlight = {colors.orange, colors.bg}}})
@@ -222,9 +248,16 @@ table.insert(gls.right, {
 })
 
 table.insert(gls.right, {
-    BufferType = {
+    FileIcon = {
+        provider = 'FileIcon',
+        condition = buffer_not_empty,
+        highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
+    }
+})
+
+table.insert(gls.right, {
+    FileType = {
         provider = 'FileTypeName',
-        condition = condition.hide_in_width,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.grey, colors.bg}
@@ -250,6 +283,12 @@ table.insert(gls.right, {
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.orange, colors.bg}
     }
+})
+table.insert(gls.right, {
+    Separa = {
+        provider = function() return ' ' end,
+        highlight = {colors.mode_bg, },
+      }
 })
 
 table.insert(gls.short_line_left, {
