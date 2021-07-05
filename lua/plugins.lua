@@ -24,6 +24,12 @@ return require("packer").startup(function(use)
     use {"nvim-lua/plenary.nvim"}
     use {"nvim-telescope/telescope.nvim"}
 
+    -- Tabular
+    use {"godlygeek/tabular"}
+
+    -- Vim Surround
+    use {"tpope/vim-surround"}
+
     -- Autocomplete
     use {
         "hrsh7th/nvim-compe",
@@ -38,6 +44,9 @@ return require("packer").startup(function(use)
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+
+    -- EasyMotion
+    -- use {"easymotion/vim-easymotion"}
 
     use {
         "kyazdani42/nvim-tree.lua",

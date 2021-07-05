@@ -48,3 +48,11 @@ vim.o.guifont = "FiraCode Nerd Font:h17"
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
 vim.o.ignorecase = O.ignore_case
 vim.o.smartcase = O.smart_case
+
+vim.cmd('autocmd FileType php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab')
+
+-- Easymotion
+vim.cmd([[
+    let g:Easymotion_do_mapping = 0
+    let g:Easymotion_smartcase = 1
+]])

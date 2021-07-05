@@ -66,16 +66,3 @@ vim.cmd('vnoremap P "0P')
 
 -- Toggle the QuickFix window
 vim.api.nvim_set_keymap('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
-
--- Put search results in the middle of the screen vim.api.nvim_set_keymap('n', 'n', 'nzz', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'N', 'Nzz', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'n', 'nzz', {noremap = true, silent = true})
-
--- System Clipboard Mappings
--- vim.api.nvim_set_keymap('v', 'y', '"*y', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('v', 'p', '"*p', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', 'Y', '"+y', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', "<leader>v", '"+p', {noremap = true, silent = true})
-
--- Enter key in normal mode save
-vim.api.nvim_set_keymap('n', '<CR>', ':w<CR>', {silent = true})

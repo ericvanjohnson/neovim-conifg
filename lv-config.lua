@@ -19,15 +19,15 @@ O.ignore_case = true
 O.smart_case = true
 
 -- After changing plugin config it is recommended to run :PackerCompile
-O.plugin.hop.active = false
+O.plugin.hop.active = true
 O.plugin.dial.active = false
 O.plugin.dashboard.active = true
-O.plugin.matchup.active = false
-O.plugin.colorizer.active = false
+O.plugin.matchup.active = true
+O.plugin.colorizer.active = true
 O.plugin.numb.active = false
 O.plugin.ts_playground.active = false
 O.plugin.indent_line.active = false
-O.plugin.gitlinker.active = false
+O.plugin.gitlinker.active = true
 O.plugin.zen.active = true
 
 -- dashboard
@@ -117,3 +117,29 @@ O.lang.rust.autoformat = true
 -- user defined plugin config
 -- custom settings
 
+-- Custom Keymappings
+
+-- Put search results in the middle of the screen vim.api.nvim_set_keymap('n', 'n', 'nzz', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'N', 'Nzz', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'n', 'nzz', {noremap = true, silent = true})
+
+-- System Clipboard Mappings
+-- vim.api.nvim_set_keymap('v', 'y', '"*y', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('v', 'p', '"*p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', 'Y', '"+y', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', "<leader>v", '"+p', {noremap = true, silent = true})
+
+-- Enter key in normal mode save
+vim.api.nvim_set_keymap('n', '<CR>', ':w<CR>', {silent = true})
+
+-- Hop
+vim.api.nvim_set_keymap('n', 's', "<cmd>lua require'hop'.hint_char1()<cr>", {noremap = true, silent = true})
+
+-- Easymotion
+-- vim.cmd([[
+--     nmap s <Plug>(easymotion-overwin-f)
+--     map <C-j> <Plug>(easymotion-j)
+--     map <C-k> <Plug>(easymotion-k)
+-- ]])
+
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
